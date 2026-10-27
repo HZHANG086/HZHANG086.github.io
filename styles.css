@@ -323,3 +323,12 @@ footer { border-top-color: var(--color-orbit); }
  .planet-art { animation: none; transform: rotate(-270deg); }
 }
 @media print { .portrait-system { display: none; } }
+
+/* A continuous, quiet starfield throughout the research dossier. */
+body {
+ background-image: url('assets/starfield.svg');
+ background-repeat: repeat;
+ background-size: 900px 760px;
+}
+@media(max-width:40rem) { body { background-size: 700px 640px; } }
+@media print { body { background-image: none; } }
