@@ -186,3 +186,8 @@ footer { font-size: 11px; }
 .topbar { flex-wrap: wrap; gap: 4px 20px; }
 .toplinks { flex-wrap: wrap; gap: 4px 20px; }
 .academic-note>a { display: flex; margin-top: 8px; }
+
+/* Personal photograph, kept in its original composition. */
+.portrait-profile { display: block; padding: 0; margin: 12px 0 0; max-width: 300px; }
+.portrait-profile img { display: block; width: 100%; height: auto; border-radius: 4px; }
+@media(min-width:60rem) { .hero { grid-template-columns: minmax(0,1fr) 280px; gap: 48px; } .portrait-profile { margin-top: 48px; } }
