@@ -187,17 +187,43 @@ footer { font-size: 11px; }
 .toplinks { flex-wrap: wrap; gap: 4px 20px; }
 .academic-note>a { display: flex; margin-top: 8px; }
 
-/* Personal photograph, kept in its original composition. */
+/* A quiet stack of photographic prints. */
 .portrait-profile {
  display: block;
+ position: relative;
  align-self: start;
- padding: 10px 10px 14px;
- margin: 12px 0 0;
- max-width: 300px;
+ width: min(280px, calc(100% - 32px));
+ padding: 0;
+ margin: 10px auto 14px;
+ order: -1;
+}
+.portrait-profile::before, .portrait-profile::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: #f4f1ea;
+ border: 1px solid rgba(66, 60, 48, .16);
+ border-radius: 4px;
+ box-shadow: 0 4px 12px rgba(35, 38, 43, .05);
+ pointer-events: none;
+}
+.portrait-profile::before { transform: translate(-7px, 5px) rotate(-3deg); }
+.portrait-profile::after { transform: translate(7px, 3px) rotate(3deg); background: #faf8f3; }
+.portrait-frame {
+ position: relative;
+ z-index: 1;
+ padding: 9px 9px 13px;
  background: #fffefa;
  border: 1px solid rgba(66, 60, 48, .14);
- border-radius: 7px;
- box-shadow: 0 2px 5px rgba(35, 38, 43, .035), 0 14px 32px -14px rgba(35, 38, 43, .22);
+ border-radius: 4px;
+ box-shadow: 0 8px 24px -12px rgba(35, 38, 43, .24);
 }
-.portrait-profile img { display: block; width: 100%; height: auto; border-radius: 2px; outline: 1px solid rgba(35, 38, 43, .06); outline-offset: -1px; }
-@media(min-width:60rem) { .hero { grid-template-columns: minmax(0,1fr) 280px; gap: 48px; } .portrait-profile { margin-top: 48px; } }
+.portrait-profile img { display: block; width: 100%; height: auto; border-radius: 1px; }
+@media(max-width:59.999rem) {
+ .hero { gap: 26px; }
+ .hero > div { text-align: left; }
+}
+@media(min-width:60rem) {
+ .hero { grid-template-columns: minmax(0,1fr) 280px; gap: 48px; }
+ .portrait-profile { order: 0; width: 100%; margin: 48px 0 14px; }
+}
