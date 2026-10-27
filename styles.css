@@ -332,3 +332,14 @@ body {
 }
 @media(max-width:40rem) { body { background-size: 700px 640px; } }
 @media print { body { background-image: none; } }
+
+/* Original game motifs as slowly rotating section markers. */
+h2::before { content: none; }
+.section-planet {
+ display: block; width: 30px; height: 30px; flex: 0 0 30px;
+ overflow: hidden; transform-origin: center;
+ animation: section-planet-spin 48s linear infinite;
+}
+@keyframes section-planet-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@media(prefers-reduced-motion:reduce) { .section-planet { animation: none; } }
+@media print { .section-planet { display: none; } }
