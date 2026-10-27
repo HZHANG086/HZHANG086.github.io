@@ -1,0 +1,18 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
+ * genre: editorial · structure: academic dossier · theme: journal / ink blue
+ * nav: restrained masthead · footer: colophon · imagery: original paper Figure 1
+ * Redesign preserves sections and routes; prioritises research evidence. */
+:root {
+ --color-paper: oklch(99% .003 255);
+ --color-surface: oklch(97% .006 255);
+ --color-ink: oklch(24% .025 260);
+ --color-body: oklch(35% .016 260);
+ --color-muted: oklch(47% .018 260);
+ --color-accent: oklch(36% .07 260);
+ --color-rule: oklch(85% .012 255);
+ --color-soft: oklch(94% .013 255);
+ --color-clear: transparent;
+ --font-display: 'Source Serif 4', 'Songti SC', Georgia, serif;
+ --font-body: 'Geist', 'PingFang SC', sans-serif;
+ --font-monogram: var(--font-display);
+}
