@@ -343,3 +343,11 @@ h2::before { content: none; }
 @keyframes section-planet-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @media(prefers-reduced-motion:reduce) { .section-planet { animation: none; } }
 @media print { .section-planet { display: none; } }
+
+/* Individual original map motifs, with unhurried independent rotation. */
+.section-planet-2 { animation-duration: 56s; }
+.section-planet-3 { animation-duration: 68s; }
+.section-planet-4 { animation-duration: 62s; }
+.section-planet-5 { animation-duration: 52s; }
+.section-planet-6 { animation-duration: 72s; }
+.section-planet-7 { animation-duration: 64s; }
