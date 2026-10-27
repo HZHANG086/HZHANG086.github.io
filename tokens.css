@@ -16,3 +16,23 @@
  --font-body: 'Geist', 'PingFang SC', sans-serif;
  --font-monogram: var(--font-display);
 }
+
+/* Outer Wilds inspired: quiet observatory, warm light, academic reading. */
+:root {
+ --color-paper: oklch(18% .018 240);
+ --color-surface: oklch(22% .021 240);
+ --color-ink: oklch(94% .018 85);
+ --color-body: oklch(84% .014 85);
+ --color-muted: oklch(72% .018 100);
+ --color-accent: oklch(80% .12 65);
+ --color-rule: oklch(36% .025 220);
+ --color-soft: oklch(28% .03 220);
+ --color-starlight: oklch(80% .025 95 / .38);
+ --color-orbit: oklch(71% .06 80 / .23);
+ --color-print: oklch(91% .025 85);
+ --color-print-back: oklch(76% .025 85);
+ --color-print-edge: oklch(62% .03 85);
+ --color-shadow: oklch(8% .01 240 / .48);
+ --color-figure: oklch(100% 0 0);
+ --color-glow: oklch(76% .10 65 / .06);
+}
