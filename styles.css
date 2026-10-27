@@ -351,3 +351,7 @@ h2::before { content: none; }
 .section-planet-5 { animation-duration: 52s; }
 .section-planet-6 { animation-duration: 72s; }
 .section-planet-7 { animation-duration: 64s; }
+
+/* Earth marks professional experience. */
+.industry-heading { display: flex; align-items: center; gap: 14px; }
+.section-earth { width: 27px; height: 27px; flex-basis: 27px; animation-duration: 80s; }
