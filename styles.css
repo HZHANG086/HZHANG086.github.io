@@ -285,3 +285,27 @@ footer { border-top-color: var(--color-orbit); }
  :root { --color-paper: white; --color-ink: black; --color-body: black; --color-muted: #444; --color-accent: #333; --color-rule: #ccc; --color-surface: white; }
  .hero::before, .portrait-orbit { display: none; }
 }
+
+/* Slow decorative motion, confined to the introductory sky and portrait. */
+.hero::before { animation: starlight 11s ease-in-out infinite alternate; }
+.hero::after {
+ content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+ background:
+ radial-gradient(circle at 7% 18%, var(--color-starlight) 0 1px, transparent 1.8px),
+ radial-gradient(circle at 46% 8%, var(--color-accent) 0 .8px, transparent 1.6px),
+ radial-gradient(circle at 92% 72%, var(--color-starlight) 0 1.2px, transparent 2px),
+ radial-gradient(circle at 57% 89%, var(--color-starlight) 0 .8px, transparent 1.6px);
+ animation: starlight 7s ease-in-out -4s infinite alternate-reverse;
+}
+.portrait-orbit { animation: orbital-drift 120s linear infinite; }
+@keyframes starlight { from { opacity: .35; } to { opacity: .85; } }
+@keyframes orbital-drift { from { transform: rotate(-23deg); } to { transform: rotate(337deg); } }
+@media(max-width:59.999rem) {
+ .portrait-orbit { width: 120%; left: -10%; height: 100%; top: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .hero::before, .hero::after, .portrait-orbit { animation: none; }
+ .hero::before { opacity: .65; }
+ .hero::after { opacity: .45; }
+}
+@media print { .hero::after { display: none; } }
