@@ -297,15 +297,29 @@ footer { border-top-color: var(--color-orbit); }
  radial-gradient(circle at 57% 89%, var(--color-starlight) 0 .8px, transparent 1.6px);
  animation: starlight 7s ease-in-out -4s infinite alternate-reverse;
 }
-.portrait-orbit { animation: orbital-drift 120s linear infinite; }
 @keyframes starlight { from { opacity: .35; } to { opacity: .85; } }
-@keyframes orbital-drift { from { transform: rotate(-23deg); } to { transform: rotate(337deg); } }
-@media(max-width:59.999rem) {
- .portrait-orbit { width: 120%; left: -10%; height: 100%; top: 0; }
-}
 @media(prefers-reduced-motion:reduce) {
  .hero::before, .hero::after, .portrait-orbit { animation: none; }
  .hero::before { opacity: .65; }
  .hero::after { opacity: .45; }
 }
 @media print { .hero::after { display: none; } }
+
+
+/* Original user-supplied game icon on a single stationary orbit. */
+.portrait-system {
+ position: absolute; width: 140%; height: 140%;
+ left: 50%; top: 50%; transform: translate(-50%, -50%);
+ overflow: visible; z-index: -1; pointer-events: none;
+ color: var(--color-print);
+}
+.system-tracks { fill: none; stroke: currentColor; stroke-width: .7; stroke-dasharray: 3 6; opacity: .55; }
+.planet-flight { transform-origin: 220px 220px; animation: planet-revolve 140s linear -105s infinite; }
+.planet-art { transform-origin: 0 0; animation: planet-revolve 140s linear -105s infinite reverse; }
+@keyframes planet-revolve { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@media(max-width:59.999rem) { .portrait-system { width: calc(100% + 56px); height: 136%; } .portrait-profile { margin-block: 48px; } }
+@media(prefers-reduced-motion:reduce) {
+ .planet-flight { animation: none; transform: rotate(270deg); }
+ .planet-art { animation: none; transform: rotate(-270deg); }
+}
+@media print { .portrait-system { display: none; } }
